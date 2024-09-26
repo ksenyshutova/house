@@ -1,0 +1,49 @@
+.service-card {
+    display: flex;
+    flex-direction: column;
+
+    &__img {
+        max-width: 100%;
+        height: auto;
+        align-self: center;
+    }
+
+    &__body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    &__name {
+        @include fluid-text(18, 16);
+        color: $color-description;
+    }
+
+    &__title {
+        @include fluid-text(35, 24);
+        font-weight: 500;
+    }
+
+    &__description {
+        font-size: 18px;
+    }
+
+    &__price {
+        @include fluid-text(24, 20);
+        color: $color-medium;
+        margin: 25px 0;
+    }
+
+    &__button {
+        cursor: pointer;
+        font-size: 20px;
+        box-sizing: border-box;
+        border: $border;
+        background-color: inherit;
+        color: $color-medium;
+        width: 100%;
+        padding: $border-padding;
+    }
+}

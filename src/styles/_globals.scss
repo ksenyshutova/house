@@ -1,0 +1,23 @@
+@import "./variables";
+
+body {
+    font-family: $font-family-base;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.28;
+    color: $color-dark;
+    background-color: $color-light;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: $transition-duration;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

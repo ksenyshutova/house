@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Ink. House</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner container container-full">
+            <a href="/" class="header__logo">
+                <img src="./images/logo.svg" alt="House" class="logo__image" width="143" height="35" loading="lazy">
+            </a>
+            <div class="header__wrapper container-mobile">
+                <nav class="header__menu hidden-mobile">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a class="header__menu-link reproduction" href="/">Репродукции</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link news" href="/">Новинки</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link team" href="/">О нас</a>
+                        </li>
+                        <li class="header__menu-item visible-tablet-s">
+                            <div class="header__phone">
+                                <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g clip-path="url(#clip42705_4018)">
+                                        <path id="primary"
+                                            d="M21 18.93C21 19.21 20.94 19.5 20.82 19.76C20.7 20.03 20.53 20.26 20.31 20.45C20.09 20.64 19.84 20.78 19.56 20.86C19.28 20.95 18.99 20.97 18.7 20.93C14.74 20.42 11.06 18.6 8.24 15.77C5.42 12.94 3.63 9.25 3.14 5.29C3.09 5 3.11 4.71 3.19 4.43C3.28 4.16 3.42 3.9 3.6 3.68C3.79 3.47 4.03 3.29 4.29 3.17C4.55 3.05 4.84 2.99 5.13 3L9 3C9.24 2.99 9.48 3.08 9.67 3.25C9.85 3.41 9.97 3.64 10 3.89C10.09 5.2 10.43 6.48 11 7.67C11.09 7.89 11.1 8.14 11.02 8.37C10.95 8.61 10.79 8.8 10.58 8.93L9.72 9.42C9.59 9.48 9.48 9.58 9.4 9.69C9.31 9.8 9.25 9.93 9.22 10.07C9.19 10.21 9.19 10.35 9.22 10.49C9.25 10.63 9.3 10.76 9.39 10.88C10.37 12.32 11.63 13.58 13.08 14.57C13.19 14.65 13.32 14.7 13.46 14.73C13.6 14.76 13.74 14.76 13.88 14.73C14.02 14.7 14.15 14.64 14.26 14.55C14.37 14.47 14.47 14.36 14.54 14.24L15.03 13.38C15.15 13.16 15.36 13 15.6 12.93C15.84 12.86 16.1 12.88 16.33 13C17.51 13.56 18.79 13.9 20.11 14C20.35 14.02 20.58 14.14 20.74 14.32C20.91 14.51 21 14.75 21 15L21 18.93Z"
+                                            stroke="#2C2D35" stroke-opacity="1.000000" stroke-width="2.000000"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                                <a class="header__phone-link" href="tel:79995435454">
+                                    +7 (999) 543-54-54
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__burger-button burger-button visible-mobile" type="button"
+                    onclick="mobileOverlay.showModal()">
+                    <span class="visually-hidden">Open navigation menu</span>
+                </button>
+                <div class="header__phone hidden-tablet-s">
+                    <a class="header__phone-link visible-mobile" href="tel:79995435454">
+                        <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g clip-path="url(#clip42705_4018)">
+                                <path id="start"
+                                    d="M21 18.93C21 19.21 20.94 19.5 20.82 19.76C20.7 20.03 20.53 20.26 20.31 20.45C20.09 20.64 19.84 20.78 19.56 20.86C19.28 20.95 18.99 20.97 18.7 20.93C14.74 20.42 11.06 18.6 8.24 15.77C5.42 12.94 3.63 9.25 3.14 5.29C3.09 5 3.11 4.71 3.19 4.43C3.28 4.16 3.42 3.9 3.6 3.68C3.79 3.47 4.03 3.29 4.29 3.17C4.55 3.05 4.84 2.99 5.13 3L9 3C9.24 2.99 9.48 3.08 9.67 3.25C9.85 3.41 9.97 3.64 10 3.89C10.09 5.2 10.43 6.48 11 7.67C11.09 7.89 11.1 8.14 11.02 8.37C10.95 8.61 10.79 8.8 10.58 8.93L9.72 9.42C9.59 9.48 9.48 9.58 9.4 9.69C9.31 9.8 9.25 9.93 9.22 10.07C9.19 10.21 9.19 10.35 9.22 10.49C9.25 10.63 9.3 10.76 9.39 10.88C10.37 12.32 11.63 13.58 13.08 14.57C13.19 14.65 13.32 14.7 13.46 14.73C13.6 14.76 13.74 14.76 13.88 14.73C14.02 14.7 14.15 14.64 14.26 14.55C14.37 14.47 14.47 14.36 14.54 14.24L15.03 13.38C15.15 13.16 15.36 13 15.6 12.93C15.84 12.86 16.1 12.88 16.33 13C17.51 13.56 18.79 13.9 20.11 14C20.35 14.02 20.58 14.14 20.74 14.32C20.91 14.51 21 14.75 21 15L21 18.93Z"
+                                    stroke="#2C2D35" stroke-opacity="1.000000" stroke-width="2.000000"
+                                    stroke-linejoin="round" />
+                            </g>
+                        </svg>
+                    </a>
+                    <a class="header__phone-link hidden-mobile" href="tel:79995435454">
+                        <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g clip-path="url(#clip42705_4018)">
+                                <path id="option"
+                                    d="M21 18.93C21 19.21 20.94 19.5 20.82 19.76C20.7 20.03 20.53 20.26 20.31 20.45C20.09 20.64 19.84 20.78 19.56 20.86C19.28 20.95 18.99 20.97 18.7 20.93C14.74 20.42 11.06 18.6 8.24 15.77C5.42 12.94 3.63 9.25 3.14 5.29C3.09 5 3.11 4.71 3.19 4.43C3.28 4.16 3.42 3.9 3.6 3.68C3.79 3.47 4.03 3.29 4.29 3.17C4.55 3.05 4.84 2.99 5.13 3L9 3C9.24 2.99 9.48 3.08 9.67 3.25C9.85 3.41 9.97 3.64 10 3.89C10.09 5.2 10.43 6.48 11 7.67C11.09 7.89 11.1 8.14 11.02 8.37C10.95 8.61 10.79 8.8 10.58 8.93L9.72 9.42C9.59 9.48 9.48 9.58 9.4 9.69C9.31 9.8 9.25 9.93 9.22 10.07C9.19 10.21 9.19 10.35 9.22 10.49C9.25 10.63 9.3 10.76 9.39 10.88C10.37 12.32 11.63 13.58 13.08 14.57C13.19 14.65 13.32 14.7 13.46 14.73C13.6 14.76 13.74 14.76 13.88 14.73C14.02 14.7 14.15 14.64 14.26 14.55C14.37 14.47 14.47 14.36 14.54 14.24L15.03 13.38C15.15 13.16 15.36 13 15.6 12.93C15.84 12.86 16.1 12.88 16.33 13C17.51 13.56 18.79 13.9 20.11 14C20.35 14.02 20.58 14.14 20.74 14.32C20.91 14.51 21 14.75 21 15L21 18.93Z"
+                                    stroke="#2C2D35" stroke-opacity="1.000000" stroke-width="2.000000"
+                                    stroke-linejoin="round" />
+                            </g>
+                        </svg>
+                        +7 (999) 543-54-54
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="section container">
+            <div class="section__information">
+                <div class="hero">
+                    <img class="hero__image" src="./images/main.svg" alt="" width="540" height="621" loading="lazy">
+                    <div class="hero__body">
+                        <h1 class="hero__title">Реплики картин от <span class="hero__title_name">Ink.
+                                House</span></h1>
+                        <div class="hero__description">
+                            <p>Высокое качество отрисовки на плотной бумаге или льняном
+                                холсте. Редкие произведения, доступные цены.</p>
+                        </div>
+                        <button class="hero__button" type="button">Заказать свою картину</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section__info container">
+            <header class="section__header">
+                <h2 class="section__title block-reprodaction">Репродукции</h2>
+                <div class="section__country">
+                    <button class="section__button section__button_active section__country_france"
+                        type="button">Франция</button>
+                    <button class="section__button section__country_germany" type="button">Германия</button>
+                    <button class="section__button section__country_england" type="button">Англия</button>
+                </div>
+            </header>
+
+            <div class="section__body section__body_france section__body_active ">
+                <div class="services">
+                    <ul class="services__list grid">
+                        <li class="services__item france active-tablet active-mobile">
+                            <article class="service-card">
+                                <img src="./images/france/france_1.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <div class="service-card__name">Марсель Руссо</div>
+                                    <h3 class="service-card__title">Охота Амура</h3>
+                                    <div class="service-card__description">Холст, масло (50х80)</div>
+                                    <div class="service-card__price">14 500 руб</div>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item france active-tablet">
+                            <article class="service-card">
+                                <img src="./images/france/france_2.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <div class="service-card__name">Анри Селин</div>
+                                    <h3 class="service-card__title">Дама с собачкой</h3>
+                                    <div class="service-card__description">Акрил, бумага (50х80)</div>
+                                    <div class="service-card__price">16 500 руб</div>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item france">
+                            <article class="service-card">
+                                <img src="./images/france/france_3.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <div class="service-card__name">Франсуа Дюпон</div>
+                                    <h3 class="service-card__title">Процедура</h3>
+                                    <div class="service-card__description">Цветная литография (40х60)</div>
+                                    <div class="service-card__price">20 000 руб</div>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item france">
+                            <article class="service-card">
+                                <img src="./images/france/france_4.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Луи Детуш</span>
+                                    <h3 class="service-card__title">Роза</h3>
+                                    <span class="service-card__description">Бумага, акрил (50х80)</span>
+                                    <span class="service-card__price">12 000 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item france">
+                            <article class="service-card">
+                                <img src="./images/france/france_5.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Франсуа Дюпон</span>
+                                    <h3 class="service-card__title">Птичья трапеза</h3>
+                                    <span class="service-card__description">Цветная литография (40х60)</span>
+                                    <span class="service-card__price">22 500 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item france">
+                            <article class="service-card">
+                                <img src="./images/france/france_6.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Пьер Моранж</span>
+                                    <h3 class="service-card__title">Пейзаж с рыбой</h3>
+                                    <span class="service-card__description">Цветная литография (40х60)</span>
+                                    <span class="service-card__price">20 000 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section__body section__body_germany ">
+                <div class="services">
+                    <ul class="services__list grid">
+                        <li class="services__item germany active-tablet active-mobile">
+                            <article class="service-card">
+                                <img src="./images/germany/germany_1.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Курт Вернер</span>
+                                    <h3 class="service-card__title">Над городом</h3>
+                                    <span class="service-card__description">Цветная литография (40х60)</span>
+                                    <span class="service-card__price">16 000 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item germany active-tablet">
+                            <article class="service-card">
+                                <img src="./images/germany/germany_2.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Макс Рихтер</span>
+                                    <h3 class="service-card__title">Птенцы</h3>
+                                    <span class="service-card__description">Холст, масло (50х80)</span>
+                                    <span class="service-card__price">14 500 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item germany">
+                            <article class="service-card">
+                                <img src="./images/germany/germany_3.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Мартин Майер</span>
+                                    <h3 class="service-card__title">Среди листьев</h3>
+                                    <span class="service-card__description">Цветная литография (40х60)</span>
+                                    <span class="service-card__price">20 000 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item germany">
+                            <article class="service-card">
+                                <img src="./images/germany/germany_4.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Герман Беккер</span>
+                                    <h3 class="service-card__title">Яркая птица</h3>
+                                    <span class="service-card__description">Цветная литография (40х60)</span>
+                                    <span class="service-card__price">13 000 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item germany">
+                            <article class="service-card">
+                                <img src="./images/germany/germany_5.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Вульф Бауэр</span>
+                                    <h3 class="service-card__title">Дятлы</h3>
+                                    <span class="service-card__description">Бумага, акрил (50х80)</span>
+                                    <span class="service-card__price">20 000 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item germany">
+                            <article class="service-card">
+                                <img src="./images/germany/germany_6.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Вальтер Хартманн</span>
+                                    <h3 class="service-card__title">Большие воды</h3>
+                                    <span class="service-card__description">Бумага, акрил (50х80)</span>
+                                    <span class="service-card__price">23 000 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section__body section__body_england ">
+                <div class="services">
+                    <ul class="services__list grid">
+                        <li class="services__item active-tablet active-mobile">
+                            <article class="service-card">
+                                <img src="./images/england/england_1.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Пол Смит</span>
+                                    <h3 class="service-card__title">Дикий зверь</h3>
+                                    <span class="service-card__description">Акварель, бумага (50х80)</span>
+                                    <span class="service-card__price">19 500 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item active-tablet">
+                            <article class="service-card">
+                                <img src="./images/england/england_2.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Джон Уайт</span>
+                                    <h3 class="service-card__title">Скалистый берег</h3>
+                                    <span class="service-card__description">Цветная литография (40х60) </span>
+                                    <span class="service-card__price">17 500 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item">
+                            <article class="service-card">
+                                <img src="./images/england/england_3.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Джим Уотсон</span>
+                                    <h3 class="service-card__title">Река и горы</h3>
+                                    <span class="service-card__description">Акварель, бумага (50х80)</span>
+                                    <span class="service-card__price">20 500 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item">
+                            <article class="service-card">
+                                <img src="./images/england/england_4.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Юджин Зиллион</span>
+                                    <h3 class="service-card__title">Белый попугай</h3>
+                                    <span class="service-card__description">Цветная литография (40х60)</span>
+                                    <span class="service-card__price">15 500 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item">
+                            <article class="service-card">
+                                <img src="./images/england/england_5.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Эрик Гиллман</span>
+                                    <h3 class="service-card__title">Ночная рыба</h3>
+                                    <span class="service-card__description">Бумага, акрил (50х80)</span>
+                                    <span class="service-card__price">12 500 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+
+                        <li class="services__item">
+                            <article class="service-card">
+                                <img src="./images/england/england_6.svg" alt="" class="service-card__img" width="310"
+                                    height="422" loading="lazy">
+                                <div class="service-card__body">
+                                    <span class="service-card__name">Альфред Барр</span>
+                                    <h3 class="service-card__title">Рыжий кот</h3>
+                                    <span class="service-card__description">Цветная литография (40х60)</span>
+                                    <span class="service-card__price">21 000 руб</span>
+                                    <button class="service-card__button" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slider__indicator visible-tablet-s">
+                <button type="button" class="slider__button_tablet first active" onclick="itemHandler(0)"></button>
+                <button type="button" class="slider__button_tablet second" onclick="itemHandler(1)"></button>
+                <button type="button" class="slider__button_tablet third" onclick="itemHandler(2)"></button>
+            </div>
+
+            <div class="slider__indicator visible-mobile">
+                <button type="button" class="slider__button slider__button_first active"
+                    onclick="itemHandler(0)"></button>
+                <button type="button" class="slider__button slider__button_second" onclick="itemHandler(1)"></button>
+                <button type="button" class="slider__button slider__button_third" onclick="itemHandler(2)"></button>
+                <button type="button" class="slider__button slider__button_fourth" onclick="itemHandler(3)"></button>
+                <button type="button" class="slider__button slider__button_fifth" onclick="itemHandler(4)"></button>
+                <button type="button" class="slider__button slider__button_sixth" onclick="itemHandler(5)"></button>
+            </div>
+
+            <div class="popup-bg">
+                <form class="popup">
+                    <article class="popup-card">
+                        <div class="popup-card__header">
+                            <h4 class="popup-card__name">Заказать свою картину</h4>
+                            <img src="./images/icons/close.svg" alt="close" class="popup-card__close">
+                        </div>
+
+                        <div class="popup-card__information">
+                            <div class="popup-card__contacts">Контакты</div>
+                            <label class="popup-card__item" for="name">
+                                <input class="field__input" id="name" placeholder="Имя">
+                            </label>
+                            <label class="popup-card__item" for="email">
+                                <input class="field__input" id="email" placeholder="Почтовый адрес">
+                            </label>
+                            <label class="popup-card__item" for="tel">
+                                <input class="field__input" id="tel" placeholder="Телефон">
+                            </label>
+                        </div>
+                        <div class="popup-card__information">
+                            <div class="popup-card__contacts">Произведение</div>
+                            <label class="popup-card__item" for="artist">
+                                <input class="field__input" id="artist" placeholder="Художник">
+                            </label>
+                            <label class="popup-card__item" for="picture">
+                                <input class="field__input" id="picture" placeholder="Название картины">
+                            </label>
+
+                            <label for="clip" class="popup-card__file">
+                                <img src="./images/icons/clip.svg" alt="" class="popup-card__img">Прикрепить
+                                файл</label>
+                            <input type="file" id="clip" name="clip" oninput="previewImage(this.files[0])"
+                                accept="image/png, image/jpeg" class="popup-card__clip">
+                            <img src='/' alt='' id="preview" style="max-width: 30%;">
+
+                            <div class="radio">
+                                <div class="popup-card__naming">Сроки готовности
+                                    <div class="radio_first">
+                                        <input type="radio" id="radio1" name="radio" class="radio__input">
+                                        <label for="radio1" class="radio__info">7-14 дней</label>
+                                    </div>
+                                    <div class="radio_second">
+                                        <input type="radio" id="radio2" name="radio" class="radio__input">
+                                        <label for="radio2" class="radio__info">Месяц</label>
+                                    </div>
+                                    <div class="radio_third">
+                                        <input type="radio" id="radio3" name="radio" class="radio__input">
+                                        <label for="radio3" class="radio__info">Больше месяца</label>
+                                    </div>
+                                </div>
+                                <div class="popup-card__naming">Размер холста
+                                    <div class="radio_fourth">
+                                        <input type="radio" id="radio4" name="radio" class="radio__input">
+                                        <label for="radio4" class="radio__info">Большой</label>
+                                    </div>
+                                    <div class="radio_fifth">
+                                        <input type="radio" id="radio5" name="radio" class="radio__input">
+                                        <label for="radio5" class="radio__info">Средний</label>
+                                    </div>
+                                    <div class="radio_sixth">
+                                        <input type="radio" id="radio6" name="radio" class="radio__input">
+                                        <label for="radio6" class="radio__info">Маленький</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="popup-card__btn" type="submit">Отправить</button>
+                        </div>
+                    </article>
+                    <div class="popup__agreement">
+                        <input type="checkbox" class="popup__agreement-check" required>
+                        <p class="popup__agreement-desc">Вы соглашаетесь с условиями Пользовательского соглашения
+                            и Политикой обработки персональных данных</p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="popup-overlay">
+                <form class="popup">
+                    <article class="popup-card">
+                        <div class="popup-card__header">
+                            <h4 class="popup-card__name">Заказать картину</h4>
+                            <img src="./images/icons/close.svg" alt="close" class="popup-card__close">
+                        </div>
+                        <div class="popup-card__info">
+                            <div class="popup-card__contacts">Контакты</div>
+                            <label class="popup-card__item" for="contact">
+                                <input class="field__input" id="contact" placeholder="Имя">
+                            </label>
+                            <label class="popup-card__item" for="mail">
+                                <input class="field__input" id="mail" placeholder="Почтовый адрес">
+                            </label>
+                            <label class="popup-card__item" for="number">
+                                <input class="field__input" id="number" placeholder="Телефон">
+                            </label>
+                        </div>
+                        <button class="popup-card__btn" type="submit">Отправить</button>
+                        <div class="popup__agreement">
+                            <input type="checkbox" class="popup__agreement-check" required>
+                            <p class="popup__agreement-desc">Вы соглашаетесь с условиями Пользовательского соглашения
+                                и Политикой обработки персональных данных</p>
+                        </div>
+                    </article>
+                </form>
+            </div>
+        </section>
+
+        <section class="section section_full">
+            <div class="container">
+                <div class="section__information">
+                    <div class="promo">
+                        <div class="promo__body">
+                            <header class="promo__header">
+                                <img src="./images/star.svg" alt="" class="promo__image">
+                                <h2 class="promo__title block-news">Новая коллекция французских авторов</h2>
+                            </header>
+                            <div class="promo__description">
+                                <p>Сложно сказать, почему акционеры крупнейших компаний призывают нас к новым
+                                    свершениям,
+                                    которые, в свою очередь, должны быть заблокированы в рамках своих собственных
+                                    рациональных ограничений.</p>
+                                <p>Принимая во внимание показатели успешности, граница обучения кадров предопределяет
+                                    высокую востребованность направлений прогрессивного развития.</p>
+                            </div>
+                            <button class="promo__button" type="button">Ознакомиться</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section__info container">
+            <div class="information">
+                <img src="./images/picture.svg" alt="" class="information__image" width="445" height="440"
+                    loading="lazy">
+                <div class="information__body">
+                    <header class="information__header">
+                        <h2 class="information__title block-team">Наша команда</h2>
+                    </header>
+                    <div class="information__description">
+                        <p>Значимость этих проблем настолько очевидна, что базовый вектор развития позволяет оценить
+                            значение экспериментов, поражающих по своей масштабности и грандиозности. Мы вынуждены
+                            отталкиваться от того, что консультация с широким активом.</p>
+                    </div>
+                    <div class="information__team">
+                        <img src="./images/team/team_1.svg" alt="" class="information__team_1">
+                        <img src="./images/team/team_2.svg" alt="" class="information__team_2">
+                        <img src="./images/team/team_3.svg" alt="" class="information__team_3">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__navigation_main">
+                <a class="footer__logo" href="/">
+                    <img src="./images/logo.svg" alt="House" class="logo__image" width="141" height="35"
+                        loading="lazy"></a>
+                <a class="footer__phone hidden-mobile" href="tel:79995435454">+7 (999) 543-54-54</a>
+            </div>
+
+            <div class="footer__navigation">
+                <nav class="footer__menu">
+                    <ul class="footer__menu-list">
+                        <li class="reproduction">
+                            <a class="footer__menu-name" href="/">Репродукции</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link footer__menu-link_france" href="/">Франция</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link footer__menu-link_germany" href="/">Германия</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link footer__menu-link_england" href="/">Англия</a>
+                        </li>
+                    </ul>
+
+                    <ul class="footer__menu-list">
+                        <li class="news">
+                            <a class="footer__menu-name" href="/">Новинки</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link news" href="/">2021</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link news" href="/">2020</a>
+                        </li>
+                    </ul>
+
+                    <ul class="footer__menu-list">
+                        <li class="team">
+                            <a class="footer__menu-name" href="/">О нас</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link team" href="/">Художники</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link team" href="/">Менеджеры</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="footer__phone_content visible-mobile"></div>
+                <a class="footer__phone container visible-mobile" href="tel:79995435454">+7 (999) 543-54-54</a>
+                <div class="footer__phone_content visible-mobile"></div>
+
+                <div class="footer__soc1als soc1als">
+                    <ul class="soc1als__list">
+                        <li class="soc1als__item">
+                            <a class="soc1als__link" href="/">
+                                <span class="visually-hidden">Facebook</span>
+                                <svg width="18.000000" height="18.000000" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path id="normal"
+                                        d="M12.4 18L12.4 11.03L14.73 11.03L15.08 8.32L12.4 8.32L12.4 6.59C12.4 5.81 12.62 5.27 13.74 5.27L15.17 5.27L15.17 2.85C14.48 2.78 13.78 2.74 13.08 2.75C11.02 2.75 9.6 4.01 9.6 6.33L9.6 8.32L7.26 8.32L7.26 11.03L9.6 11.03L9.6 18L1 18C0.73 18 0.48 17.89 0.29 17.7C0.1 17.51 0 17.26 0 17L0 1C0 0.73 0.1 0.48 0.29 0.29C0.48 0.1 0.73 0 1 0L17 0C17.26 0 17.51 0.1 17.7 0.29C17.89 0.48 18 0.73 18 1L18 17C18 17.26 17.89 17.51 17.7 17.7C17.51 17.89 17.26 18 17 18L12.4 18Z"
+                                        fill="#2C2D35" fill-opacity="1.000000" fill-rule="nonzero" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="soc1als__item">
+                            <a class="soc1als__link" href="/">
+                                <span class="visually-hidden">Instagram</span>
+                                <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g clip-path="url(#clip10_916)">
+                                        <path id="vector"
+                                            d="M12 2C14.71 2 15.05 2 16.12 2.06C17.18 2.1 17.91 2.27 18.54 2.52C19.2 2.77 19.76 3.12 20.32 3.67C20.83 4.17 21.22 4.78 21.47 5.45C21.72 6.08 21.88 6.81 21.93 7.87C21.98 8.94 22 9.28 22 12C22 14.71 21.99 15.05 21.93 16.12C21.88 17.18 21.72 17.91 21.47 18.54C21.22 19.21 20.83 19.82 20.32 20.32C19.82 20.83 19.21 21.22 18.54 21.47C17.91 21.72 17.18 21.89 16.12 21.93C15.05 21.98 14.71 22 12 22C9.28 22 8.94 21.99 7.87 21.93C6.81 21.89 6.08 21.72 5.44 21.47C4.78 21.22 4.17 20.83 3.67 20.32C3.16 19.82 2.77 19.21 2.52 18.54C2.27 17.91 2.11 17.18 2.06 16.12C2.01 15.05 2 14.71 2 12C2 9.28 2.01 8.94 2.06 7.87C2.11 6.81 2.27 6.08 2.52 5.45C2.77 4.78 3.16 4.17 3.67 3.67C4.17 3.16 4.78 2.77 5.44 2.52C6.08 2.27 6.81 2.1 7.87 2.06C8.94 2.01 9.28 2 12 2ZM12 7C10.67 7 9.4 7.52 8.46 8.46C7.52 9.4 7 10.67 7 12C7 13.32 7.52 14.59 8.46 15.53C9.4 16.47 10.67 17 12 17C13.32 17 14.59 16.47 15.53 15.53C16.47 14.59 17 13.32 17 12C17 10.67 16.47 9.4 15.53 8.46C14.59 7.52 13.32 7 12 7ZM18.5 6.75C18.5 6.41 18.36 6.1 18.13 5.86C17.89 5.63 17.58 5.5 17.25 5.5C16.91 5.5 16.6 5.63 16.36 5.86C16.13 6.1 16 6.41 16 6.75C16 7.08 16.13 7.39 16.36 7.63C16.6 7.86 16.91 8 17.25 8C17.58 8 17.89 7.86 18.13 7.63C18.36 7.39 18.5 7.08 18.5 6.75ZM12 9C12.79 9 13.55 9.31 14.12 9.87C14.68 10.44 15 11.2 15 12C15 12.79 14.68 13.55 14.12 14.12C13.55 14.68 12.79 15 12 15C11.2 15 10.44 14.68 9.87 14.12C9.31 13.55 9 12.79 9 12C9 11.2 9.31 10.44 9.87 9.87C10.44 9.31 11.2 9 12 9Z"
+                                            fill="#2C2D35" fill-opacity="1.000000" fill-rule="nonzero" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="soc1als__item">
+                            <a class="soc1als__link" href="/">
+                                <span class="visually-hidden">YouTube</span>
+                                <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g clip-path="url(#clip10_919)">
+                                        <path id="window"
+                                            d="M21.54 6.49C22 8.27 22 12 22 12C22 12 22 15.72 21.54 17.5C21.28 18.48 20.54 19.26 19.6 19.52C17.89 20 12 20 12 20C12 20 6.1 20 4.39 19.52C3.44 19.25 2.7 18.48 2.45 17.5C2 15.72 2 12 2 12C2 12 2 8.27 2.45 6.49C2.71 5.51 3.45 4.73 4.39 4.47C6.1 4 12 4 12 4C12 4 17.89 4 19.6 4.47C20.55 4.74 21.29 5.51 21.54 6.49ZM10 15.5L16 12L10 8.5L10 15.5Z"
+                                            fill="#2C2D35" fill-opacity="1.000000" fill-rule="nonzero" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="footer__extra">Ink. House ®</p>
+                    <p class="footer__extra">All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+
+    <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+        <form class="mobile-overlay__close-button-wrapper" method="dialog">
+            <button class="mobile-overlay__close-button cross-button" type="submit">
+                <span class="visually-hidden">Close navigation menu</span>
+            </button>
+            <img src="./images/icons/phone.svg" alt="" class="phone__image" width="24" height="24" loading="lazy">
+        </form>
+        <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link reprodaction" href="/">Репродукции</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link news" href="/">Новинки</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a class="mobile-overlay__link team" href="/">О нас</a>
+                </li>
+            </ul>
+        </div>
+    </dialog>
+</body>
+
+</html>

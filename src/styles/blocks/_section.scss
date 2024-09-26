@@ -1,0 +1,113 @@
+ .section {
+     position: relative;
+     margin-top: 30px;
+
+     @include mobile {
+         margin-top: 60px;
+     }
+
+     &__info {
+         @include mobile {
+             margin-top: 0;
+         }
+     }
+
+     &__body {
+         display: none;
+
+         &_active {
+             display: block;
+         }
+     }
+
+     &__title {
+         @include fluid-text(40, 24);
+         font-weight: 500;
+         margin-right: 5px;
+     }
+
+     &__country {
+         display: flex;
+
+         @include mobile {
+             overflow: hidden;
+         }
+     }
+
+     &__header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         width: 100%;
+         margin-bottom: 41px;
+
+         @include tablet-s {
+             flex-direction: column;
+             justify-content: initial;
+             align-items: initial;
+             gap: 20px;
+         }
+     }
+
+     &__button {
+         box-sizing: border-box;
+         border: none;
+         @include fluid-text(20, 18);
+         padding: 10px 20px;
+         border-radius: 20px;
+         background-color: $background-light;
+         cursor: pointer;
+
+         &:nth-child(n+2) {
+             margin-left: 3.65vw;
+
+             @include tablet-b {
+                 margin-left: 15px;
+             }
+         }
+
+         &:hover {
+             background-color: $color-medium;
+             color: $color-light;
+         }
+
+         &:focus {
+             background-color: $background-light;
+             color: $color-dark;
+             border: 2px solid $color-medium;
+             padding: 8px 18px;
+         }
+
+         &_active {
+             background-color: $color-dark-green;
+             color: $color-light;
+         }
+     }
+
+     &_full {
+         background-image: url('../images/main_bg.svg');
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: center;
+         overflow: hidden;
+
+         @include tablet-b {
+             background-position: 65% 50%;
+         }
+
+         &::after {
+             content: '';
+             display: block;
+             width: 60%;
+             height: 100%;
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background-color: rgba(13, 43, 67, 0.8);
+             z-index: 1;
+             filter: blur(70px);
+         }
+     }
+ }

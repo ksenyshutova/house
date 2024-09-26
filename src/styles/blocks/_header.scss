@@ -1,0 +1,126 @@
+.header {
+    background: $background-header;
+    padding: $container-padding-x 0;
+
+    @include mobile {
+        padding: 0;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet-s {
+            flex-direction: column;
+        }
+    }
+
+    &__logo {
+        @include tablet-s {
+            width: calc(100% - 2*$container-padding-x);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &::after {
+                display: block;
+                content: '';
+                border: 1px solid rgb(195, 209, 198);
+                width: 100%;
+                margin: 16px 0;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+
+        @include mobile {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            background-color: $color-white;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex: 1;
+        align-items: center;
+
+        @include tablet-s {
+            gap: 1vw;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+
+        @include tablet-s {
+            justify-content: space-between;
+        }
+
+
+        &-list {
+            display: flex;
+            @include fluid-text(20, 18);
+            gap: 6.5vw;
+
+            @include tablet-b {
+                @include fluid-gap(40, 18);
+            }
+
+            @include tablet-s {
+                gap: 0.4vw;
+                flex: 1;
+                justify-content: space-between;
+            }
+        }
+
+        &-link {
+            &:hover {
+                color: $color-medium;
+            }
+
+            &:focus {
+                background-color: $background-light;
+            }
+
+            &:active {
+                color: $color-dark-green;
+            }
+        }
+    }
+
+    &__phone {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: $color-medium;
+
+            @include mobile {
+                color: $color-dark;
+            }
+        }
+
+        &:focus {
+            background-color: $background-light;
+        }
+
+        &:active {
+            color: $color-dark-green;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            @include fluid-text(20, 18);
+            cursor: pointer;
+        }
+    }
+}

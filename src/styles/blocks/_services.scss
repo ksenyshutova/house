@@ -1,0 +1,25 @@
+.services {
+    &__item {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        background-color: $background-header;
+
+        @include tablet-s {
+            display: none;
+
+            &.active-tablet {
+                display: flex;
+            }
+        }
+
+        @include mobile {
+            display: none !important;
+
+            &.active-mobile {
+                display: flex !important;
+                width: 100%;
+            }
+        }
+    }
+}

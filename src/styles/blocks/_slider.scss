@@ -1,0 +1,25 @@
+.slider {
+  &__indicator {
+    position: sticky;
+    margin: 30px 0;
+    display: flex;
+
+    @include tablet-s {
+      width: 100%;
+    }
+  }
+
+  &__button,
+  &__button_tablet {
+    background-color: rgb(195, 209, 198);
+    border: none;
+    border-radius: 20px;
+    height: 2px;
+    width: calc(100% / 3);
+
+    &.active {
+      background-color: $color-dark-green;
+      padding: 2px 0;
+    }
+  }
+}

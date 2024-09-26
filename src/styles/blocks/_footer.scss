@@ -1,0 +1,135 @@
+.footer {
+    background-color: $background-header;
+    margin-top: 70px;
+    padding: 23px 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet-b {
+            flex-direction: column;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        flex: 1;
+
+        @include tablet-s {
+            flex-direction: column;
+        }
+
+        @include mobile {
+            align-items: center;
+        }
+
+        &_main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @include tablet-b {
+                flex-direction: row;
+                margin-bottom: 47px;
+            }
+
+            @include mobile {
+                justify-content: center;
+                margin-bottom: 26px;
+            }
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        @include fluid-gap(60, 10);
+
+        @include tablet-b {
+            justify-content: stretch;
+        }
+
+        @include tablet-s {
+            justify-content: space-between;
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        &-name {
+            @include fluid-text(20, 16);
+        }
+
+        &-list {
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        &-item {
+            @include fluid-text(18, 16);
+            color: $color-description;
+        }
+    }
+
+    &__phone {
+        display: flex;
+        align-items: center;
+        @include fluid-text(18, 16);
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            display: block;
+            background-image: url('../images/icons/phone.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 24px;
+            height: 24px;
+            margin-right: 3px;
+        }
+
+        &_content {
+            display: block;
+            border: 1px solid rgb(195, 209, 198);
+            width: 100%;
+            margin: 15px 0 20px;
+        }
+
+    }
+
+    &__extra {
+        font-size: 12px;
+        color: $color-description;
+    }
+
+    &__soc1als {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet-s {
+            align-items: center;
+
+            &::before {
+                content: '';
+                display: block;
+                border: 1px solid rgb(195, 209, 198);
+                width: 100%;
+                margin: 15px 0 20px;
+            }
+
+            @include mobile {
+                align-items: center;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

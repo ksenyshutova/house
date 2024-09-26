@@ -1,0 +1,18 @@
+.soc1als {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__link path {
+        &:hover {
+            fill: $color-medium;
+        }
+
+        &:active {
+            fill: $color-dark-green;
+        }
+    }
+}

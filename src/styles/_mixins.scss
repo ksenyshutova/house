@@ -1,0 +1,7 @@
+@mixin fluid-text($max: 60, $min: 12) {
+  font-size: clamp(#{$min}px, #{calc($max / 1440 * 100)}vw, #{$max}px);
+}
+
+@mixin fluid-gap($max: 200, $min: 10) {
+  gap: clamp(#{$min}px, #{calc($max / 1440 * 100)}vw, #{$max}px);
+}
