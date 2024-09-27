@@ -1101,6 +1101,14 @@ svg * {
   max-height: 90%;
   overflow-y: scroll;
 }
+@media (max-width: 508px) {
+  .popup {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    min-height: 100vh;
+  }
+}
 .popup-overlay {
   position: fixed;
   display: none;
